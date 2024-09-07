@@ -4,10 +4,10 @@ import ctypes
 import shutil
 import subprocess
 import sys
-
+version = "0.1.2"
 
 def M_info() -> None:
-    print("M_func_toolkit \nAuthor: Mario Pisano \nVersion: 0.0.5 \nLicense: EUPL 1.2 \nCopyright: 2024 Mario Pisano")
+    print(f"M_func_toolkit \nAuthor: Mario Pisano \n{version} \nLicense: EUPL 1.2 \nCopyright: 2024 Mario Pisano")
 
 def log(action: str, folder: str = "logs") -> None:
     if not os.path.exists(folder):

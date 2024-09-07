@@ -1,39 +1,50 @@
 import subprocess
 import sys
+libraries = [
+            'os',
+            'tkinter',
+            'markdown2',
+            'datetime',
+            'ctypes',
+            'shutil',
+            'transformers',
+            'matplotlib',
+            'threading',
+            'winsound',
+            'time',
+            'csv',
+            'numpy',
+            'mpl_toolkits.mplot3d',
+            'math'
+]
 
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+try:
+    def install(package):
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
-def install_requirements() -> None:
+    def install_requirements() -> None:
 
-    # Lista delle librerie da installare
-    libraries = [
-        'os',
-        'tkinter',
-        'markdown2',
-        'datetime',
-        'ctypes',
-        'shutil',
-        'transformers',
-        'matplotlib',
-        'threading',
-        'winsound',
-        'time',
-        'csv',
-        'numpy',
-        'mpl_toolkits.mplot3d',
-        'math'
-    ]
-
-    # Funzione per installare una libreria
+        # Lista delle librerie da installare
 
 
-    # Installazione di tutte le librerie nella lista
-    for library in libraries:
-        install(library)
+        # Funzione per installare una libreria
+
+
+        # Installazione di tutte le librerie nella lista
+        for library in libraries:
+            install(library)
+
+    print("Inizializzazione...")
+
+    install_requirements()
 
     print("Installazione completata!")
+    input("Premere invio per chiudere il programma")
 
+except:
+    print(f"Errore durante l'installazione delle librerie, preghiamo di installare le librerie manualmente con il comando pip install <libreria>, installare le seguenti librerie: {libraries}")
+
+    input("Premere invio per chiudere il programma")
 
 
 #FINE CODICE

@@ -20,9 +20,7 @@ apps_folder = "./apps/"
 
 
 def run_ADC() -> None:
-    script_path = os.path.join(apps_folder, 'ADC.py')
-    subprocess.run(['python', script_path])
-
+    print("Funzionalità WIP, aprire manualmente dal folder apps")
 # Funzioni per eseguire gli script Python
 def run_2dcreator() -> None:
     script_path = os.path.join(apps_folder, '2dcreator.py')
