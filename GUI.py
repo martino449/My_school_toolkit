@@ -13,6 +13,11 @@ def hide_console():
 hide_console()
 
 
+def show_console() -> None:
+    hwnd = ctypes.windll.kernel32.GetConsoleWindow()
+    if hwnd:
+        ctypes.windll.user32.ShowWindow(hwnd, 5)  # 5 = SW_SHOW
+
 
 
 # Percorso alla cartella contenente gli script Python
@@ -20,8 +25,9 @@ apps_folder = "./apps/"
 
 
 def run_ADC() -> None:
-    print("Funzionalità WIP, aprire manualmente dal folder apps")
-# Funzioni per eseguire gli script Python
+    show_console()
+    script_path = os.path.join(apps_folder, 'ADC.py')
+    subprocess.run(['python', script_path])
 def run_2dcreator() -> None:
     script_path = os.path.join(apps_folder, '2dcreator.py')
     subprocess.run(['python', script_path])

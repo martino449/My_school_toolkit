@@ -1,5 +1,5 @@
 import os
-from M_func_toolkit import M_info, log, save, read, directory_exists_create, backup_py_files, directory_exists, system_info, time_info, battery_info, cpu_info, ram_info, install_requirements
+from M_func_toolkit import M_info, log, save, read, directory_exists_create, backup_py_files, directory_exists, system_info, time_info, battery_info, cpu_info, ram_info, install_requirements, hide_console
 
 
 p_actions = {
@@ -23,6 +23,7 @@ if __name__ == "__main__":
     while True:
         comando = input(">")
         if comando == "exit":
+            hide_console()
             break
         elif comando == "help":
             print("Comandi disponibili: \n" + "\n".join(p_actions.keys()) + "\nclear\n" + "dir\n" + "help\n" + "exit" + "\n" + "log\n" + "save\n" + "read\n" + "directory_exists\n" + "directory_exists_create")
