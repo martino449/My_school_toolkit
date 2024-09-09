@@ -1,4 +1,5 @@
 import json
+import os
 from tkinter import Tk, simpledialog
 
 def crea_quiz():
@@ -16,15 +17,18 @@ def crea_quiz():
         answer = simpledialog.askstring("Risposta", "Inserisci la risposta corretta:")
         questions.append({"question": question, "options": options, "answer": answer})
 
-    with open("quiz.json", "w") as file:
+    # Crea la cartella 'quiz_generati' se non esiste
+    if not os.path.exists("quiz_generati"):
+        os.makedirs("quiz_generati")
+
+    # Salva i quiz nella cartella 'quiz_generati'
+    with open("quiz_generati/quiz.json", "w") as file:
         json.dump(questions, file)
 
     root.quit()
 
 if __name__ == "__main__":
     crea_quiz()
-
-
 
 
 #FINE CODICE

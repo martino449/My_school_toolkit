@@ -1,27 +1,17 @@
 import json
 import tkinter as tk
 from tkinter import messagebox
-import ctypes
-
-
-
-def hide_console() -> None:
-    hwnd = ctypes.windll.kernel32.GetConsoleWindow()
-    if hwnd:
-        ctypes.windll.user32.ShowWindow(hwnd, 0)  # 0 = SW_HIDE
- 
- 
-hide_console()
-
-
+import os
 
 class QuizApp:
-    def __init__(self, root):
+    def __init__(self, root, quiz_files):
         self.root = root
         self.root.title("Quiz Grafico")
         
-        with open("quiz.json", "r") as file:
-            self.questions = json.load(file)
+        self.questions = []
+        for quiz_file in quiz_files:
+            with open(quiz_file, "r") as file:
+                self.questions.extend(json.load(file))
         
         self.current_question = 0
         self.score = 0
@@ -63,9 +53,10 @@ class QuizApp:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = QuizApp(root)
+    quiz_folder = "quiz_generati"
+    quiz_files = [os.path.join(quiz_folder, file) for file in os.listdir(quiz_folder) if file.endswith(".json")]
+    app = QuizApp(root, quiz_files)
     root.mainloop()
-
 
 
 

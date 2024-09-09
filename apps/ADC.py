@@ -1,6 +1,6 @@
 import os
 from M_func_toolkit import M_info, log, save, read, directory_exists_create, backup_py_files, directory_exists, system_info, time_info, battery_info, cpu_info, ram_info, install_requirements, hide_console
-
+from M_CER import start_crypter, start_decrypter, generate_keys
 
 p_actions = {
     "M_info": M_info,
@@ -10,7 +10,10 @@ p_actions = {
     "battery_info": battery_info,
     "cpu_info": cpu_info,
     "ram_info": ram_info,
-    "install_requirements": install_requirements
+    "install_requirements": install_requirements,
+    "start_crypter": start_crypter,
+    "start_decrypter": start_decrypter,
+    "generate_keys": generate_keys
 }
 
 

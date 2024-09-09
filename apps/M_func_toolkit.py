@@ -9,7 +9,7 @@ version = "0.1.5"
 def M_info() -> None:
     print(f"M_func_toolkit \nAuthor: Mario Pisano \n{version} \nLicense: EUPL 1.2 \nCopyright: 2024 Mario Pisano")
 
-def log(action: str, folder: str = "logs") -> None:
+def log(action: str, folder: str = "apps/logs") -> None:
     if not os.path.exists(folder):
         os.makedirs(folder)
 
@@ -19,7 +19,7 @@ def log(action: str, folder: str = "logs") -> None:
     with open(log_path, "a") as f:
         f.write(f"{timestamp} - {action}\n")
 
-def save(data: str, filename: str, folder: str = "data", mode: str = 'a') -> None:
+def save(data: str, filename: str, folder: str = "apps/data", mode: str = 'a') -> None:
     if not os.path.exists(folder):
         os.makedirs(folder)
 
@@ -28,7 +28,7 @@ def save(data: str, filename: str, folder: str = "data", mode: str = 'a') -> Non
     with open(file_path, mode) as f:
         f.write(data + "\n")
 
-def read(filename: str, folder: str = "data") -> str:
+def read(filename: str, folder: str = "apps/data") -> str:
     file_path = os.path.join(folder, filename)
     if not os.path.exists(file_path):
         return ""
