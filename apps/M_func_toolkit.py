@@ -4,7 +4,7 @@ import ctypes
 import shutil
 import subprocess
 import sys
-version = "0.1.5"
+version = "0.2.1"
 
 def M_info() -> None:
     print(f"M_func_toolkit \nAuthor: Mario Pisano \n{version} \nLicense: EUPL 1.2 \nCopyright: 2024 Mario Pisano")
