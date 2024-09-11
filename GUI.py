@@ -28,6 +28,11 @@ def run_ADC() -> None:
     show_console()
     script_path = os.path.join(apps_folder, 'ADC.py')
     subprocess.run(['python', script_path])
+
+def run_quiz() -> None:
+    show_console()
+    script_path = os.path.join(apps_folder, 'quiz_creator_app.py')
+    subprocess.run(['python', script_path])
 def run_2dcreator() -> None:
     script_path = os.path.join(apps_folder, '2dcreator.py')
     subprocess.run(['python', script_path])
@@ -79,6 +84,8 @@ btn_reacions.pack(pady=5)
 btn_vector = tk.Button(root, text="Esegui Vector", command=run_vector)
 btn_vector.pack(pady=5)
 
+btn_vector = tk.Button(root, text="Esegui Quiz Creator", command=run_quiz)
+btn_vector.pack(pady=5)
 
 btn_vector = tk.Button(root, text="Apri ambiente di comando (solo utenti avanzati)", command=run_ADC)
 btn_vector.pack(pady=5)
